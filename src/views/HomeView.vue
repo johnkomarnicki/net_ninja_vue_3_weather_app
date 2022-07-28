@@ -26,7 +26,6 @@
             v-for="searchResult in mapboxSearchResults"
             :key="searchResult.id"
             class="py-2 cursor-pointer"
-            @click="previewCity(searchResult)"
           >
             {{ searchResult.place_name }}
           </li>
