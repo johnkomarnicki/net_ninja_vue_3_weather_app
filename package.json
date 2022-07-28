@@ -8,10 +8,10 @@
   },
   "dependencies": {
     "vue": "^3.2.37",
-    "vue-router": "^4.1.2"
+    "vue-router": "^4.0.16"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.1",
-    "vite": "^3.0.1"
+    "@vitejs/plugin-vue": "^2.3.3",
+    "vite": "^2.9.12"
   }
 }
