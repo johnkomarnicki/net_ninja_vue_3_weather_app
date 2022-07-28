@@ -34,20 +34,15 @@ const mapboxAPIKey =
 const searchQuery = ref("");
 const queryTimeout = ref(null);
 const mapboxSearchResults = ref(null);
-const searchError = ref(null);
 
 const getSearchResults = () => {
   clearTimeout(queryTimeout.value);
   queryTimeout.value = setTimeout(async () => {
     if (searchQuery.value !== "") {
-      try {
-        const result = await axios.get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchQuery.value}.json?access_token=${mapboxAPIKey}&types=place`
-        );
-        mapboxSearchResults.value = result.data.features;
-      } catch {
-        searchError.value = true;
-      }
+      const result = await axios.get(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchQuery.value}.json?access_token=${mapboxAPIKey}&types=place`
+      );
+      mapboxSearchResults.value = result.data.features;
 
       return;
     }
